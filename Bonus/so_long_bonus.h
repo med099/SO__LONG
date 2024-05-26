@@ -6,7 +6,7 @@
 /*   By: moouali <moouali@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 14:46:19 by moouali           #+#    #+#             */
-/*   Updated: 2024/05/25 22:49:13 by moouali          ###   ########.fr       */
+/*   Updated: 2024/05/26 01:07:58 by moouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include <stdio.h>
 # include "../MLX42/include/MLX42/MLX42.h"
 # include "../utils/gnl/get_next_line.h"
 # include "../utils/printf/ft_printf.h"
@@ -25,8 +26,8 @@
 typedef struct s_mlx
 {
 	mlx_t			*mlx;
-	mlx_image_t		*img[16];
-	mlx_texture_t	*texture[16];
+	mlx_image_t		*img[17];
+	mlx_texture_t	*texture[17];
 	mlx_image_t		palyer;
 	char			**map;
 	char			*fname;
@@ -35,6 +36,8 @@ typedef struct s_mlx
 	int				y;
 	int				x_plyr;
 	int				y_plyr;
+	int				x_drag;
+	int				y_drag;
 	int				x_exit;
 	int				y_exit;
 	int				fd;
@@ -52,6 +55,7 @@ typedef struct s_map
 	int		p;
 	int		e;
 	int		c;
+	int		d;
 	int		i;
 	int		j;
 }	t_map;

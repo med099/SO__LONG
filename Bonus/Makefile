@@ -6,7 +6,7 @@
 #    By: moouali <moouali@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/24 15:02:29 by moouali           #+#    #+#              #
-#    Updated: 2024/05/25 17:16:08 by moouali          ###   ########.fr        #
+#    Updated: 2024/05/26 00:41:48 by moouali          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ INCLUDES = ../MLX42/build/libmlx42.a ../utils/printf/libftprintf.a \
 
 OBJECTS = $(SOURCES:.c=.o)
 
-%.o: %.c $(PREFIX)/so_long.h
+%.o: %.c $(PREFIX)/so_long_bonus.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME) 

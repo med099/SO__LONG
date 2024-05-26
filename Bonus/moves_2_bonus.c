@@ -6,19 +6,17 @@
 /*   By: moouali <moouali@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 21:32:36 by moouali           #+#    #+#             */
-/*   Updated: 2024/05/25 22:35:59 by moouali          ###   ########.fr       */
+/*   Updated: 2024/05/26 00:58:55 by moouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
-#include <stdio.h>
 
 void	print_moves(t_mlx *mlx)
 {
 	static int	i;
 	char		nb[20];
 
-	(void)mlx;
 	sprintf(nb, "move : %d\n", ++i);
 	mlx_image_to_window(mlx->mlx, mlx->img[9], 0, 0);
 	mlx_image_to_window(mlx->mlx, mlx->img[9], WIDTH, 0);

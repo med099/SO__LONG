@@ -6,7 +6,7 @@
 /*   By: moouali <moouali@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 15:10:26 by moouali           #+#    #+#             */
-/*   Updated: 2024/05/25 17:24:36 by moouali          ###   ########.fr       */
+/*   Updated: 2024/05/26 00:44:28 by moouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	intial_var(t_map *elem)
 	elem->c = 0;
 	elem->p = 1;
 	elem->e = 1;
+	elem->d = 1;
 }
 
 void	check_elements(char **map)
@@ -36,6 +37,8 @@ void	check_elements(char **map)
 				(elem.p)--;
 			else if (map[elem.i][elem.j] == 'C')
 				elem.c++;
+			else if (map[elem.i][elem.j] == 'D')
+				elem.d--;
 			else if (map[elem.i][elem.j] != '0' && map[elem.i][elem.j] != '1'
 					&& map[elem.i][elem.j] != 'S')
 				break ;
@@ -45,7 +48,7 @@ void	check_elements(char **map)
 		else
 			break ;
 	}
-	if (map[elem.i] || elem.p || elem.e || elem.c == 0)
+	if (map[elem.i] || elem.p || elem.e || elem.c == 0 || elem.d)
 		ft_exit_fmap(map, "error passing map element\n", 1);
 }
 

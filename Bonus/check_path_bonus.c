@@ -6,7 +6,7 @@
 /*   By: moouali <moouali@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 15:06:34 by moouali           #+#    #+#             */
-/*   Updated: 2024/05/25 17:12:06 by moouali          ###   ########.fr       */
+/*   Updated: 2024/05/26 00:56:00 by moouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	flood_fill(char **map, int i, int j)
 {
-	if (i <= 0 || j <= 0 || map[i][j] == '1' || map[i][j] == 'S')
+	if (i <= 0 || j <= 0 || map[i][j] == '1' || map[i][j] == 'S' || map[i][j] == 'D')
 		return ;
 	else if (map[i][j] == 'p')
 		return ;
@@ -55,6 +55,8 @@ void	check_valid_path(char **map)
 	get_a_position(map, &i, &j);
 	flood_fill(map, i, j);
 	get_a_position(map, &i, &j);
+	// for(int y = 0; map[y]; y++)
+	// 	printf("%s", map[y]);
 	if (j || i)
 		ft_exit_fmap(map, "Invalide path\n", 1);
 	ft_printf("evrething good\n");
