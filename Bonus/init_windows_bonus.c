@@ -6,7 +6,7 @@
 /*   By: moouali <moouali@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 17:50:30 by moouali           #+#    #+#             */
-/*   Updated: 2024/05/26 01:09:12 by moouali          ###   ########.fr       */
+/*   Updated: 2024/05/26 10:39:04 by moouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	check_textures(t_mlx *mlx)
 			mlx_delete_texture(mlx->texture[i]);
 		i++;
 	}
-	ft_exit("Error load PNG\n", 1);
+	ft_exit(NULL, "Error load PNG\n", 1);
 }
 
 static void	load_txtr_to_img(t_mlx *mlx)
@@ -95,11 +95,8 @@ static void	right_index(char c, t_mlx *mlx)
 		mlx->x_exit = mlx->i;
 		mlx->y_exit = mlx->j;
 	}
-	else if (c == 'C')
-	{
+	else if (c == 'C' && ++mlx->col)
 		mlx->p = 13;
-		mlx->col++;
-	}
 	else if (c == 'S')
 		mlx->p = 15;
 	else if (c == 'D')

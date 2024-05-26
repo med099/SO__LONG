@@ -6,7 +6,7 @@
 #    By: moouali <moouali@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/24 15:02:29 by moouali           #+#    #+#              #
-#    Updated: 2024/05/26 00:41:48 by moouali          ###   ########.fr        #
+#    Updated: 2024/05/26 10:50:35 by moouali          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,12 +20,11 @@ PREFIX = ./
 
 SOURCES = $(addprefix $(PREFIX), \
 			main_bonus.c check_bonus.c exit_bonus.c check_path_bonus.c check_2_bonus.c \
-			init_windows_bonus.c moves_bonus.c moves_2_bonus.c) \
+			init_windows_bonus.c moves_bonus.c moves_2_bonus.c move_enemy_bonus.c) \
 			../utils/gnl/get_next_line.c ../utils/gnl/get_next_line_utils.c
 
 INCLUDES = ../MLX42/build/libmlx42.a ../utils/printf/libftprintf.a \
 			-Iinclude -lglfw -L"/Users/moouali/.brew/opt/glfw/lib/" \
-			# -fsanitize=address -g
 
 OBJECTS = $(SOURCES:.c=.o)
 

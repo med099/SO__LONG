@@ -6,7 +6,7 @@
 /*   By: moouali <moouali@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:58:48 by moouali           #+#    #+#             */
-/*   Updated: 2024/05/25 17:11:58 by moouali          ###   ########.fr       */
+/*   Updated: 2024/05/26 10:48:16 by moouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,18 @@ void	ft_exit_fmap(char **map, char *msg, int ret)
 	exit(ret);
 }
 
-void	ft_exit(char *msg, int ret)
+void	ft_exit(t_mlx *mlx, char *msg, int ret)
 {
+	int	i;
+
+	i = 0;
+	while (i < 17 && mlx)
+	{
+		mlx_delete_texture(mlx->texture[i]);
+		i++;
+	}
+	if (mlx)
+		mlx_terminate(mlx->mlx);
 	ft_printf(msg);
 	exit(ret);
 }

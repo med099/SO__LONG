@@ -6,7 +6,7 @@
 /*   By: moouali <moouali@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 14:46:19 by moouali           #+#    #+#             */
-/*   Updated: 2024/05/26 01:07:58 by moouali          ###   ########.fr       */
+/*   Updated: 2024/05/26 10:41:38 by moouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ typedef struct s_map
 }	t_map;
 
 void	my_keyhook(mlx_key_data_t keydata, void *param);
-void	ft_exit(char *msg, int ret);
+void	ft_exit(t_mlx *mlx, char *msg, int ret);
 int		check_map(int ac, char **av);
 void	ft_exit_fmap(char **map, char *msg, int ret);
 void	ft_free_map(char **map);
@@ -74,5 +74,6 @@ void	load_img_to_windows(t_mlx *mlx);
 void	print_moves(t_mlx *mlx);
 void	load_the_right_img(t_mlx *mlx, char c, int x, int y);
 void	player_above_exit(t_mlx *mlx, int x, int y);
+void	move_enemy(void *par);
 
 #endif

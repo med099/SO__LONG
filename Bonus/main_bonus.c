@@ -6,7 +6,7 @@
 /*   By: moouali <moouali@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 15:08:59 by moouali           #+#    #+#             */
-/*   Updated: 2024/05/26 02:02:36 by moouali          ###   ########.fr       */
+/*   Updated: 2024/05/26 12:14:48 by moouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,44 +72,6 @@ void	load_img_to_win(void *par)
 		i = -1;
 	if (j == 7)
 		j = 0;
-}
-
-void	move_enemy(void *par)
-{
-	t_mlx	*mlx;
-	static int	j;
-	static int	i;
-
-	mlx = (t_mlx *)par;
-	while (j++ < 18)
-		return ;
-	if (j == 19)
-		j = 0;
-	if (mlx->map[mlx->y_drag + 1][mlx->x_drag] == '0' && i)
-	{
-		mlx_image_to_window(mlx->mlx, mlx->img[10], mlx->x_drag * WIDTH, mlx->y_drag * HEIGHT);
-		mlx->map[mlx->y_drag][mlx->x_drag] = '0';
-		mlx->y_drag++;
-		mlx->map[mlx->y_drag][mlx->x_drag] = 'D';
-		mlx_image_to_window(mlx->mlx, mlx->img[16], mlx->x_drag * WIDTH, mlx->y_drag * HEIGHT);
-		return ;
-	}
-	else if (mlx->map[mlx->y_drag - 1][mlx->x_drag] == '0' && !i)
-	{
-		mlx_image_to_window(mlx->mlx, mlx->img[10], mlx->x_drag * WIDTH, mlx->y_drag * HEIGHT);
-		mlx->map[mlx->y_drag][mlx->x_drag] = '0';
-		mlx->y_drag--;
-		mlx->map[mlx->y_drag][mlx->x_drag] = 'D';
-		mlx_image_to_window(mlx->mlx, mlx->img[16], mlx->x_drag * WIDTH, mlx->y_drag * HEIGHT);
-		return ;
-	}
-	else if(mlx->map[mlx->y_drag - 1][mlx->x_drag] == 'P' 
-			|| mlx->map[mlx->y_drag + 1][mlx->x_drag] == 'P')
-			ft_exit("Game Over\n", 1);
-	else if (i)
-		i = 0;
-	else
-		i = 1;
 }
 
 void	_init_mlx(t_mlx *mlx)
